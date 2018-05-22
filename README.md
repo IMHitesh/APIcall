@@ -53,7 +53,7 @@ Goto> `API.swift` > Add Base URL
 
 `    var aryUrlString:[String] = [strCountryAPI,strForgotPassword,strloginAPI,strEditProfile]`
 
-Simple GET, POST and Multipart request
+**Simple GET, POST and Multipart request**
 
 
 `fileprivate func SampleGetRequest() {`
