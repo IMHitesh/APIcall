@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class ViewController: UIViewController{
 
-    @IBOutlet weak var tblData: UITableView!
     
     var aryAllData:[Person] = NSMutableArray() as! [Person]
     
@@ -20,9 +19,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
 
         
-        MultipartImageUploading()
-    
-        tblData.register(customCell.self, forCellReuseIdentifier: "Cell")
         
     }
 
@@ -71,24 +67,5 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print(dictError)
         }
     }
-
-    //MARK: Tableview delegate method
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return aryAllData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier:"customCell", for: indexPath) as! customCell
-
-        let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
-
-        let objPerson = aryAllData[indexPath.row]
-//        cell.lblTitle?.text = objPerson.name
-        cell.textLabel?.text = objPerson.name
-        return cell
-        
-    }
-    
-
 }
 
